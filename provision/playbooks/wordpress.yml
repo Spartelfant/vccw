@@ -161,26 +161,27 @@
       --path={{ path }}
     with_dict: "{{ vccw.options }}"
 
+  # Commented out because we're setting this manually in site.yaml
   # Localization
-  - name: Get the timezone
-    command: |
-      wp eval "echo _x( '0', 'default GMT offset or timezone string' );"
-      --path={{ path }}
-    register: timezone
-  - name: Update timezone
-    command: |
-      wp option update timezone_string '{{ timezone.stdout }}'
-      --path={{ path }}
+  #- name: Get the timezone
+  #  command: |
+  #    wp eval "echo _x( '0', 'default GMT offset or timezone string' );"
+  #    --path={{ path }}
+  #  register: timezone
+  #- name: Update timezone
+  #  command: |
+  #    wp option update timezone_string '{{ timezone.stdout }}'
+  #    --path={{ path }}
 
-  - name: Get the date format
-    command: |
-      wp eval "echo __( 'M jS Y' );"
-      --path={{ path }}
-    register: date_format
-  - name: Update date format
-    command: |
-      wp option update date_format '{{ date_format.stdout }}'
-      --path={{ path }}
+  #- name: Get the date format
+  #  command: |
+  #    wp eval "echo __( 'M jS Y' );"
+  #    --path={{ path }}
+  #  register: date_format
+  #- name: Update date format
+  #  command: |
+  #    wp option update date_format '{{ date_format.stdout }}'
+  #    --path={{ path }}
 
   # Setting Permalink
   - name: Run `wp rewrite structure`
