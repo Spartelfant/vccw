@@ -1,18 +1,5 @@
-# VCCW
+# VCCW forked from [vccw-team/vccw](https://github.com/vccw-team/vccw)
 
-[![Build Status](https://travis-ci.org/vccw-team/vccw.svg?branch=master)](https://travis-ci.org/vccw-team/vccw)
+For the original project, updates and how to get started, check out <http://vccw.cc/>
 
-This is a Vagrant configuration designed for development of WordPress plugins, themes, or websites.
-
-To get started, check out <http://vccw.cc/>
-
-## Configuration
-
-1. Copy `provision/default.yml` to `site.yml`.
-1. Edit the `site.yml`.
-1. Run `vagrant up`.
-
-### Note
-
-* The `site.yml` has to be in the same directory with Vagrantfile.
-* You can put difference to the `site.yml`.
+This fork has been modified to suit my own personal needs. It may be altered, broken, deleted or abandoned at any time. Commit messages are the only documentation. If this is useful to you, you may want to consider forking it yourself.
