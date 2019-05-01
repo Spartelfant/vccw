@@ -59,6 +59,7 @@
        --dbname={{ vccw.db_name }} \
        --dbuser={{ vccw.db_user }} \
        --dbpass={{ vccw.db_pass }} \
+       --dbpass={{ vccw.db_charset }} \
        --dbprefix={{ vccw.db_prefix }} \
        --locale={{ vccw.lang }} \
        --extra-php < /tmp/extra-wp-config.php
