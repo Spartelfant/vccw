@@ -134,7 +134,7 @@
 
     - name: Move phpMyAdmin to webroot
       become: yes
-      shell: bash -lc 'mv /usr/share/phpmyadmin/ /vagrant/wordpress/'
+      shell: bash -lc 'mv -f /usr/share/phpmyadmin/ /vagrant/wordpress/'
       ignore_errors: yes
 
     # Setup WordPress coding standards
