@@ -134,7 +134,13 @@
 
     - name: Move phpMyAdmin to webroot
       become: yes
-      shell: bash -lc 'mv -f /usr/share/phpmyadmin/ /vagrant/wordpress/'
+      shell: bash -lc 'mv --force /usr/share/phpmyadmin/ /vagrant/wordpress/'
+      ignore_errors: yes
+
+    # Download evolve theme version 4.0.5
+    - name: Download evolve theme version 4.0.5
+      become: yes
+      shell: bash -lc 'svn export --quiet https://themes.svn.wordpress.org/evolve/4.0.5/ /vagrant/wordpress/wp-content/themes/evolve'
       ignore_errors: yes
 
     # Setup WordPress coding standards
