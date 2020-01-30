@@ -124,25 +124,6 @@
       with_items: "{{ vccw.npms | default([]) }}"
       ignore_errors: yes
 
-    # Install phpMyAdmin
-    - name: Install phpMyAdmin
-      become: yes
-      apt:
-        name: phpmyadmin
-        state: present
-        update_cache: yes
-
-    - name: Move phpMyAdmin to webroot
-      become: yes
-      shell: bash -lc 'mv --force /usr/share/phpmyadmin/ /vagrant/wordpress/'
-      ignore_errors: yes
-
-    # Download evolve theme version 4.0.5
-    - name: Download evolve theme version 4.0.5
-      become: yes
-      shell: bash -lc 'svn export --quiet https://themes.svn.wordpress.org/evolve/4.0.5/ /vagrant/wordpress/wp-content/themes/evolve'
-      ignore_errors: yes
-
     # Setup WordPress coding standards
     - name: Check the `phpcs` exists.
       shell: bash -lc 'phpcs --help &> /dev/null; echo $?'
